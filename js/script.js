@@ -136,7 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
     completedTODOList.innerHTML = '';
 
 
-    
+    for(const todoItem of todos) {
+      const todoElement = makeTodo(todoItem);
+      if(!todoItem.isCompleted) {
+        uncompletedTODOList.append(todoElement);
+      } else {
+        completedTODOList.append(todoElement);
+      }
+    }
   });
 
 
