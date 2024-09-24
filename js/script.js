@@ -128,7 +128,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
 
- 
+  document.addEventListener(RENDER_EVENT, function() {
+    const uncompletedTODOList = document.getElementById('todos');
+    uncompletedTODOList.innerHTML = '';
+
+    const completedTODOList = document.getElementById('completed-todos');
+    completedTODOList.innerHTML = '';
+
+
+    for(const todoItem of todos) {
+      const todoElement = makeTodo(todoItem);
+      if(!todoItem.isCompleted) {
+        uncompletedTODOList.append(todoElement);
+      } else {
+        completedTODOList.append(todoElement);
+      }
+    }
   });
   
 });
