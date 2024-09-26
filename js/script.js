@@ -190,8 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener(SAVED_EVENT, () => {
-  console.log('Data berhasil di simpan.');
+document.addEventListener(SAVED_EVENT, function() {
+  console.log(localStorage.getItem(STORAGE_KEY));
 });
 
 document.addEventListener(RENDER_EVENT, function () {
@@ -210,4 +210,4 @@ document.addEventListener(RENDER_EVENT, function () {
       uncompletedTODOList.append(todoElement);
     }
   }
-})
+});
